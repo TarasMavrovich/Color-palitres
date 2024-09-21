@@ -39,14 +39,24 @@
         "#5d696b",
         "#ffffff",
         "#000000",
+        "#4DE2EF",
+        "#053048",
+        "#0E0B07",
+        "#594B12",
+        "#8C3608",
+        "#0FA3B1",
+        "#B5E2FA",
+        "#F9F7F3",
+        "#EDDEA4",
+        "#F7A072",
       ];
 
       // Отримуємо контейнер для відображення кольорових блоків
       const colorContainer = document.getElementById("color-container");
 
-      // Створюємо всі можливі комбінації кольорів
-      colors.forEach((textColor) => {
-        colors.forEach((bgColor) => {
+      // Створюємо блоки для кожного кольору фону, щоб блоки з однаковим фоном були поруч
+      colors.forEach((bgColor) => {
+        colors.forEach((textColor) => {
           if (textColor !== bgColor) {
             // Виключаємо однакові кольори для тексту і фону
             // Створюємо блок
