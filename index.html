@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Combinations</title>
+    <style>
+      .color-block {
+        width: 150px;
+        height: 100px;
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Кольорові блоки</h1>
+    <div id="color-container"></div>
+
+    <script>
+      // Масив кольорів
+      const colors = [
+        "#b0a193",
+        "#d1cbbb",
+        "#ccb55a",
+        "#dfbd70",
+        "#8c6f49",
+        "#0c3b59",
+        "#273f55",
+        "#34566c",
+        "#042651",
+        "#02214e",
+        "#2f4e79",
+        "#758da7",
+        "#768d93",
+        "#5d696b",
+      ];
+
+      // Отримуємо контейнер для відображення кольорових блоків
+      const colorContainer = document.getElementById("color-container");
+
+      // Створюємо всі можливі комбінації кольорів
+      colors.forEach((textColor) => {
+        colors.forEach((bgColor) => {
+          if (textColor !== bgColor) {
+            // Виключаємо однакові кольори для тексту і фону
+            // Створюємо блок
+            const colorBlock = document.createElement("div");
+            colorBlock.className = "color-block";
+            colorBlock.style.backgroundColor = bgColor;
+            colorBlock.style.color = textColor;
+            colorBlock.innerHTML = `
+            Текст: ${textColor} <br> Фон: ${bgColor}
+          `;
+            // Додаємо блок до контейнера
+            colorContainer.appendChild(colorBlock);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
